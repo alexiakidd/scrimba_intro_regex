@@ -280,11 +280,45 @@ let result = pwRegex.test(sampleWord);
 console.log(result);
 */
 
+//29 - Reutilizar padroes usando Capture Groups
+/*
 let repeatStr = "regex regex";
-let repeatRegex = /(\w+)\s\1/;
+let repeatRegex = /(\w+)\s\2/; ///(\w+) - 1 group   //\s - space  // \1/ - repeat 1 time the group 1
 repeatRegex.test(repeatStr); // Returns true
 repeatStr.match(repeatRegex); // Returns ["regex regex", "regex"]
 
-let repeatNum = "42 42 42";
-let reRegex = /change/; // Change this line
+//um grupo com so tres 42 in a row
+let repeatNum = "42 42 42"; 
+let reRegex = /^(\d+)\s\1\s\1$/; 
 let result = reRegex.test(repeatNum);
+*/
+
+
+//30 - Usar Capture Groups para buscar e substituir
+/*
+let wrongText = "The sky is silver.";
+let silverRegex = /silver/;
+let result = wrongText.replace(silverRegex,"blue"); //method replace
+console.log(result);
+
+let resultado = "Code Camp".replace(/(\w+)\s(\w+)/, '$2 $1');//$2 - second capture group $1 - 1ºcapt. group e inverteu a ordem
+console.log(resultado);
+
+
+let huhText = "This sandwich is good.";
+let fixRegex = /good/;
+let replaceText = "okey-dokey";
+let result1 = huhText.replace(fixRegex, replaceText);
+console.log(result1);
+*/
+
+
+//31- Remove Whitespace from start and end
+/*
+let hello = "   Hello, World!   ";
+let wsRegex = /^\s+|\s+$/g;
+let result = hello.replace(wsRegex,'');
+console.log(result);
+*/
+
+
